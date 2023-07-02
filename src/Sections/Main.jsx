@@ -1,53 +1,77 @@
 import React from "react";
 
-const Main = () => {
-  ;
+const Main = ({ word }) => {
+  // console.log(word);
+
+  const phonetic = word.phonetics.find((phone) => phone.audio && phone.text);
+
+  const play = (e) => {
+    const audio = new Audio(phonetic.audio);
+    audio.play();
+  };
+
+  // let info = [];
+  // let meanings = [];
+  // // let definitions = [];
+
+  // word.meanings.length > 0
+  //   ? word.meanings.definitions.map((meaning, i) => {
+  //       // meanings.push(meaning);
+  //       console.log(meaning);
+  //     })
+  //   : null;
+
+  // meanings.definitions.map((definition) => {
+  //   console.log(definition);
+  // });
+
   return (
     <section id="main-section">
       <header className="container main-header">
         <div className="main-header__text">
-          <h2 className="main-header__word">Hello</h2>
-          <p className="main-header__transcription">Hellllo</p>
+          <h2 className="main-header__word">{word.word}</h2>
+          <p className="main-header__transcription">{phonetic.text}</p>
         </div>
-        <div className="main-header__play">
+        <div onClick={play} className="main-header__play">
           <i class="fa-regular fa-circle-play"></i>
         </div>
       </header>
-      <main className="container main-main">
-        <div className="noun-box">
-          <h5 className="noun-title">Noun</h5>
-          <span className="noun-line"></span>
-        </div>
-        <h5 className="noun-subtitle">Meaining</h5>
-        <ul className="noun-list">
-          <li>
-            <div className="noun-circle"></div>
-          </li>
-        </ul>
-        <h5 className="noun-description">
-          Synonyms:
-          <a href="#" className="noun-description__link">
-            sdsd
-          </a>
-        </h5>
-
-        <div className="verb-box">
-          <h5 className="verb-title">Verb</h5>
-          <span className="verb-line"></span>
-        </div>
-        <h5 className="verb-subtitle">Meaining</h5>
-        <ul className="verb-list">
-          <li>
-            <div className="verb-circle"></div>
-          </li>
-        </ul>
-        <h5 className="verb-description">
-          Source:
-          <a href="#" className="verb-description__link">
-            sdsd
-          </a>
-        </h5>
-      </main>
+      {word.meanings.length > 0
+        ? word.meanings.map((mean, i) => (
+            <main key={i} className="container main-main">
+              <div className="noun-box">
+                <h5 className="noun-title">{mean.partOfSpeech}</h5>
+                <span className="noun-line"></span>
+              </div>
+              <h5 className="noun-subtitle">Meaining</h5>
+              <ul className="noun-list">
+                {mean.definitions.length > 0 &&
+                  mean.definitions.map((definitions, i) => (
+                    <li key={i}>
+                      {/* <div className="noun-circle"></div> */}
+                      <div className="flex flex-col">
+                        <span>{definitions.definition}</span>
+                        {definitions.example && (
+                          <span className="text-[#757575]">
+                            " {definitions.example}"
+                          </span>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                {mean.synonyms.length > 0 && (
+                  <h5 className="noun-description">
+                    Synonym:
+                    <a key={i} className="noun-description__link">
+                      {mean.synonyms[0]}
+                    </a>
+                  </h5>
+                )}
+              </ul>
+            </main>
+          ))
+        : null}
+      sss
       <footer id="main-footer">
         <h1 className="footer-title">
           Powered by:
