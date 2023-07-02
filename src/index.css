@@ -1,0 +1,339 @@
+/* karla-200 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 200;
+  src: url("./Fonts/karla-v30-latin-200.woff2") format("woff2");
+}
+/* karla-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./Fonts/karla-v30-latin-300.woff2") format("woff2");
+}
+/* karla-400 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./Fonts/karla-v30-latin-400.woff2") format("woff2");
+}
+/* karla-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./Fonts/karla-v30-latin-500.woff2") format("woff2");
+}
+/* karla-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./Fonts/karla-v30-latin-600.woff2") format("woff2");
+}
+/* karla-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./Fonts/karla-v30-latin-700.woff2") format("woff2");
+}
+/* karla-800 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./Fonts/karla-v30-latin-800.woff2") format("woff2");
+}
+
+:root {
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+*::selection {
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+}
+
+body {
+  color: #fff;
+  padding: 30px 25px;
+  font-size: 20px;
+  font-weight: 400;
+  background: #050505;
+  font-family: "Karla", sans-serif;
+}
+
+image,
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#search-section {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 50px;
+  position: fixed;
+  background: #050505;
+
+  /* box-shadow: 0px 0px 7px 2px rgba(255, 255, 255, 0.747); */
+}
+
+.search-content {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  border-radius: 16px;
+  background: #1f1f1f;
+  justify-content: space-between;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-input {
+  width: 85%;
+  height: 100%;
+  border: none;
+  padding: 20px;
+  outline: none;
+  background: transparent;
+
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.search-button {
+  width: 10%;
+  height: 100%;
+  color: #fff;
+  font-size: 20px;
+  background: transparent;
+  /* background: #9b6565; */
+}
+
+#main-section {
+  width: 100%;
+  padding-top: 80px;
+}
+
+.main-header {
+  display: flex;
+  margin-top: 45px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header__word {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.main-header__transcription {
+  color: #a445ed;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: normal;
+}
+
+.main-header__play {
+  cursor: pointer;
+  font-size: 60px;
+  color: #a445ed;
+}
+
+.main-main {
+  display: flex;
+  margin: 40px auto;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.noun-box,
+.verb-box {
+  gap: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.noun-title,
+.verb-title {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: normal;
+}
+
+.noun-line,
+.verb-line {
+  width: 100%;
+  height: 2px;
+  background: #3a3a3a;
+}
+
+.verb-description__link,
+.noun-description__link {
+  display: flex;
+  flex-direction: row;
+  color: #a445ed;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.noun-subtitle,
+.noun-description,
+.verb-subtitle,
+.verb-description,
+.main-footer__title,
+.verb-description {
+  gap: 20px;
+  display: flex;
+  margin: 40px 0;
+  align-items: center;
+
+  color: #757575;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.noun-list,
+.verb-list {
+  display: flex;
+  margin: 25px 40px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.noun-list li,
+.verb-list li {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.noun-circle,
+.verb-circle {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a445ed;
+}
+
+#main-footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  background: #050505;
+}
+
+.footer-title {
+  gap: 8px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 20px;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer-title__link {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 450px) {
+  .main-header__word {
+    font-size: 44px;
+  }
+
+  .main-header__transcription {
+    font-size: 14px;
+  }
+
+  .main-header__play {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 250px) {
+  .main-header__word {
+    font-size: 34px;
+  }
+
+  .main-header__transcription {
+    font-size: 14px;
+  }
+
+  .main-header__play {
+    font-size: 35px;
+  }
+}
